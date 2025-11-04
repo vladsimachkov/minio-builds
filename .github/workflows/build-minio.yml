@@ -1,9 +1,6 @@
 name: Build MinIO Binaries
 
 on:
-  # Run nightly at 2 AM UTC
-  schedule:
-    - cron: '0 2 * * *'
 
   # Allow manual trigger with optional version override
   workflow_dispatch:
