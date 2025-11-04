@@ -66,7 +66,7 @@ jobs:
 
   build:
     name: Build MinIO - linux/amd64
-    runs-on: ubuntu-24.04-8core
+    runs-on: [self-hosted, linux]
     needs: [get-version, check-release]
     if: needs.check-release.outputs.exists == 'false'
     steps:
@@ -125,7 +125,7 @@ jobs:
 
   release:
     name: Create GitHub Release
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux]
     needs: [get-version, build]
     steps:
       - name: Download binary artifact
